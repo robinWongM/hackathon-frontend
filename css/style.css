@@ -96,6 +96,7 @@ a, a:visited {
 }
 
 .cover-arrow-down {
+    cursor: default;
     position: absolute;
     bottom: 32px;
     margin: 0 auto;
@@ -107,4 +108,48 @@ a, a:visited {
     border-radius: 100%;
     background-color: white;
     font-size: 24px;
+    animation: jitter 2s ease 0s infinite;
+}
+
+.editing::after {
+    content: ' ';
+    display: inline-block;
+    height: 60%;
+    width: 2px;
+    border-left: 2px solid rgba(248, 251, 255, 0.8);
+    animation: blink 2s ease-in-out 0s infinite;
+}
+
+.animated {
+    transition: all 1s ease-in-out;
+}
+
+.hide {
+    opacity: 0;
+}
+
+@keyframes blink {
+    0%, 20% {
+        opacity: 0;
+    }
+
+    40%, 60% {
+        opacity: 1;
+    }
+    
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes jitter {
+    0%, 60% {
+        transform: translateY(0);
+    }
+    80% {
+        transform: translateY(20%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
