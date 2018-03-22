@@ -10,7 +10,7 @@
     <script src="js/main.js"></script>
 </head>
 <body>
-    <section class="cover">
+    <section id="cover" class="cover">
         <div class="cover-info-wrapper">
             <p id="coverTitle" class="cover-title editing" content="Hackathon."></p>
             <p class="cover-subinfo hide animated">Just Create It.</p>
@@ -20,14 +20,19 @@
                     <i class="material-icons icon">access_time</i>2018年04月18-19日
                 </span>
                 <span class="">
-                    <i class="material-icons icon">place</i>中山大学                </span>
+                    <i class="material-icons icon">place</i>中山大学
+                </span>
             </div>
             <a class="animated hide" href="replace-your-register.html"><div class="join-button">加入我们</div></a>
             <div class="cover-arrow-down animated hide"><i class="material-icons">keyboard_arrow_down</i></div>
         </div>
-        <div class="shader"></div>
+        <div class="cover-mask"></div>
     </section>
     <section class="placeholder"></section>
-    <section class="advertisement"></section>
+    <section id="mask" class="mask"></section>
+    <section class="advertisement">
+        <div id="adBackground" class="advertisement-background"></div>
+        <div class="advertisement-content"></div>
+    </section>
 </body>
 </html>
