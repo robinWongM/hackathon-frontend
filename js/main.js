@@ -43,19 +43,25 @@
         );
 
         var perFrameCallback = function () {
-            var top = window.scrollY;
-            var total = document.body.clientHeight;
-            cover.style.bottom = top + 'px';
-            mask.style.opacity = 1 - top / total;
-            if (window.scrollY === document.body.clientHeight) {
-                cover.classList.remove('shadow');
+            if (document.body.clientWidth > 600) {
+                var top = window.scrollY;
+                var total = document.body.clientHeight;
+                cover.style.bottom = top + 'px';
+                mask.style.opacity = 1 - top / total;
+                if (window.scrollY === document.body.clientHeight) {
+                    cover.classList.remove('shadow');
+                } else {
+                    cover.classList.add('shadow');
+                }
+                var backPx = 100 - 100 * (top / total);
+                var topPx = 50 - 50 * (top / total);
+                infoContent.style.transform = 'translateY(' + topPx + 'px)';
+                infoBackground.style.transform = 'translateY(' + backPx + 'px)';
             } else {
-                cover.classList.add('shadow');
+                cover.style.bottom = 'initial';
+                infoContent.style.transform = '';
+                infoBackground.style.transform = '';
             }
-            var backPx = 100 - 100 * (top / total);
-            var topPx = 50 - 50 * (top / total);
-            infoContent.style.transform = 'translateY(' + topPx + 'px)';
-            infoBackground.style.transform = 'translateY(' + backPx + 'px)';
             animationFrame(perFrameCallback);
         }
         animationFrame(perFrameCallback);

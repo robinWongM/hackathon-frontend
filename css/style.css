@@ -197,8 +197,16 @@ a, a:visited {
 
 
 @media (max-width: 600px) {
+    .cover {
+        position: relative;
+    }
+
+    .cover-info-wrapper {
+        position: relative;
+    }
+
     .cover-title {
-        font-size: 42px;
+        font-size: 48px;
     }
 
     .cover-subinfo {
@@ -216,6 +224,10 @@ a, a:visited {
         font-size: 14px;
     }
 
+    .cover-mask {
+        top: 0;
+    }
+
     .icon {
         font-size: 18px;
     }
@@ -229,6 +241,19 @@ a, a:visited {
         width: 32px;
         height: 32px;
         bottom: 16px;
+    }
+
+    .mask {
+        display: none;
+    }
+
+    .placeholder {
+        display: none;
+    }
+
+    .more-info {
+        position: relative;
+        top: initial;
     }
 
     .more-info-background {
