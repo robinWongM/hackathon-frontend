@@ -43,7 +43,7 @@
         );
 
         var perFrameCallback = function () {
-            if (document.body.clientWidth > 760 && document.body.clientHeight > 760) {
+            if (document.body.clientWidth > 600) {
                 var top = window.scrollY;
                 var total = document.body.clientHeight;
                 cover.style.bottom = top + 'px';
