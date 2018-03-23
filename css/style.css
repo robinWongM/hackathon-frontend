@@ -2,7 +2,7 @@ html {
     height: 100%;
     width: 100%;
     background-color: white;
-    font-family: sans-serif;
+    font-family: sans-serif, 'Microsoft Yahei';
 }
 
 body {
@@ -59,6 +59,16 @@ a, a:visited {
     margin: 0;
     text-shadow: 8px 8px 1px rgba(0, 0, 0, 0.1);
 }
+
+.editing::after {
+    content: ' ';
+    display: inline-block;
+    height: 96px;
+    width: 2px;
+    border-left: 2px solid rgba(248, 251, 255, 0.8);
+    animation: blink 2s ease-in-out 0s infinite;
+}
+
 
 .cover-subinfo {
     color: rgba(227, 238, 255, 0.8);
@@ -237,6 +247,10 @@ a, a:visited {
         font-size: 48px;
     }
 
+    .editing::after {
+        height: 36px;
+    }
+
     .cover-subinfo {
         font-size: 32px;
         margin: 12px 0;
@@ -326,15 +340,6 @@ a, a:visited {
     .sponsor-list>a>img {
         height: 22px;
     }
-}
-
-.editing::after {
-    content: ' ';
-    display: inline-block;
-    height: 60%;
-    width: 2px;
-    border-left: 2px solid rgba(248, 251, 255, 0.8);
-    animation: blink 2s ease-in-out 0s infinite;
 }
 
 .animated {
