@@ -2,4 +2,6 @@
 
 A static page for propagating.
 
-**Please replace the urls in the `index.html`.**
+**Please replace the date, place and url in the `index.html`.**
+
+Try it: [DEMO](https://delbertbeta.github.io/hackathon-frontend/index.html)
