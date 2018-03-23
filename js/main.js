@@ -43,7 +43,7 @@
         );
 
         var perFrameCallback = function () {
-            if (document.body.clientWidth > 600) {
+            if (document.body.clientWidth > 760 && document.body.clientHeight > 760) {
                 var top = window.scrollY;
                 var total = document.body.clientHeight;
                 cover.style.bottom = top + 'px';
@@ -67,8 +67,20 @@
         animationFrame(perFrameCallback);
     }
 
-    window.addEventListener('load', function () {
+    var timeOut;
+
+    var init = function () {
         initAnimation();
         initParallax();
-    });
+        clearTimeout(timeOut);
+    }
+
+    timeOut = setTimeout(function () {
+        window.removeEventListener('load', init);
+        init();
+    }, 5000);
+
+    window.addEventListener('load', init);
+
+
 })();
