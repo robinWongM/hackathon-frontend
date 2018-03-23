@@ -1,7 +1,7 @@
 (function () {
     var cancleHide = function () {
         var hidenItems = document.querySelectorAll('.hide');
-        Array.prototype.forEach.call(hidenItems, function(item) {
+        Array.prototype.forEach.call(hidenItems, function (item) {
             item.classList.remove('hide');
         })
     }
@@ -28,8 +28,20 @@
     var initParallax = function () {
         var cover = document.getElementById('cover');
         var mask = document.getElementById('mask');
-        var adBackground = document.getElementById('adBackground');
-        var animationFrame;
+        var infoContent = document.getElementById('infoContent');
+        var infoBackground = document.getElementById('infoBackground');
+
+        var animationFrame = (
+            window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.oRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            function (callback) {
+                setTimeout(callback, 1000 / 60);
+            }
+        );
+
         var perFrameCallback = function () {
             var top = window.scrollY;
             var total = document.body.clientHeight;
@@ -40,9 +52,13 @@
             } else {
                 cover.classList.add('shadow');
             }
-            animationFrame = requestAnimationFrame(perFrameCallback);
+            var backPx = 100 - 100 * (top / total);
+            var topPx = 50 - 50 * (top / total);
+            infoContent.style.transform = 'translateY(' + topPx + 'px)';
+            infoBackground.style.transform = 'translateY(' + backPx + 'px)';
+            animationFrame(perFrameCallback);
         }
-        animationFrame = requestAnimationFrame(perFrameCallback);
+        animationFrame(perFrameCallback);
     }
 
     window.addEventListener('load', function () {
