@@ -44,7 +44,7 @@
 
         var perFrameCallback = function () {
             if (document.body.clientWidth > 600) {
-                var top = window.scrollY;
+                var top = window.pageYOffset;
                 var total = document.body.clientHeight;
                 cover.style.bottom = top + 'px';
                 mask.style.opacity = 1 - top / total;
